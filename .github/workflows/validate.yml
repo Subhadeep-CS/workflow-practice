@@ -13,6 +13,7 @@ jobs:
         run: test -f index.html
   validate-js-file:
     runs-on: ubuntu-latest
+    needs: [check-file]
     steps:
       - name: Checkout repo code
         uses: actions/checkout@v4
@@ -20,6 +21,7 @@ jobs:
         run: node --check index.js
   validate-html-code:
     runs-on: ubuntu-latest
+    needs: [check-file]
     steps:
       - name: Checkout repo code
         uses: actions/checkout@v4
