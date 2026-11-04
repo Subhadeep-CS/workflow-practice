@@ -5,8 +5,9 @@ jobs:
   check-file:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repo code
+        run: actions/checkout@v4
       - name: validate js file
         run: test -f index.js
       - name: validate html file
         run: test -f index.html
-    
