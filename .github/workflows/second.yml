@@ -1,0 +1,9 @@
+name: Second Workflow
+on:
+  push:
+jobs:
+  second-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prinitng thing
+        run: echo "Hello World"
