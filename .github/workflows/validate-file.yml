@@ -1,7 +1,7 @@
 name: Validate HTML and js file
 on:
   workflow_run:
-    workflows: [Validate HTML and js existence]
+    workflows: [Validate]
     types:
       - completed
 jobs:

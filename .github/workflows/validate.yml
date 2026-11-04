@@ -1,4 +1,4 @@
-name: Validate HTML and js existence
+name: Validate
 on:
   push:
 jobs:
