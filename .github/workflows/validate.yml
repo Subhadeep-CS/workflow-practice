@@ -11,3 +11,5 @@ jobs:
         run: test -f index.js
       - name: validate html file
         run: test -f index.html
+      - name: fail task
+        run: exit 1
