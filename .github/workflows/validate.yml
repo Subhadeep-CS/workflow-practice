@@ -11,3 +11,17 @@ jobs:
         run: test -f index.js
       - name: validate html file
         run: test -f index.html
+  validate-js-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo code
+        run: actions/checkout@v4
+      - name: validate js code
+        run: node --check index.js
+  validate-html-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo code
+        uses: actions/checkout@v4
+      - name: Validate html
+        run: npx htmlhint index.html
