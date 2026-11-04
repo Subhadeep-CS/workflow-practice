@@ -1,0 +1,12 @@
+name: Validate HTML and css
+on:
+  push:
+jobs:
+  check-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: validate js file
+        run: test -f index.js
+      - name: validate html file
+        run: test -f index.html
+    
