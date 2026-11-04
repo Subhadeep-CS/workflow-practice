@@ -1,0 +1,21 @@
+name: Validate HTML and js file
+on:
+  workflow_run:
+    workflows: [validate]
+    types:
+      - completed
+jobs:
+  validate-js-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo code
+        uses: actions/checkout@v4
+      - name: validate js code
+        run: node --check index.js
+  validate-html-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo code
+        uses: actions/checkout@v4
+      - name: Validate html
+        run: npx htmlhint index.html

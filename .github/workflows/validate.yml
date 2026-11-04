@@ -1,4 +1,4 @@
-name: Validate HTML and css
+name: Validate HTML and js existence
 on:
   push:
 jobs:
@@ -11,19 +11,3 @@ jobs:
         run: test -f index.js
       - name: validate html file
         run: test -f index.html
-  validate-js-file:
-    runs-on: ubuntu-latest
-    needs: [check-file]
-    steps:
-      - name: Checkout repo code
-        uses: actions/checkout@v4
-      - name: validate js code
-        run: node --check index.js
-  validate-html-code:
-    runs-on: ubuntu-latest
-    needs: [check-file]
-    steps:
-      - name: Checkout repo code
-        uses: actions/checkout@v4
-      - name: Validate html
-        run: npx htmlhint index.html
