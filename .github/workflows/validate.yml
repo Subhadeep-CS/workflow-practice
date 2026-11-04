@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo code
-        run: actions/checkout@v4
+        uses: actions/checkout@v4
       - name: validate js code
         run: node --check index.js
   validate-html-code:
